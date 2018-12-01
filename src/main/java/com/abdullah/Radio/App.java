@@ -1,4 +1,4 @@
-package com.abdullah.RadioEkattor;
+package com.abdullah.Radio;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -8,7 +8,6 @@ import java.util.Scanner;
 
 public class App {
 	public static void main(String[] args) throws InterruptedException {
-		System.out.println("Hello World!");
 		System.out.println("hi radio 98.4");
 		ProcessDownload processDownload = new ProcessDownload();
 
@@ -49,13 +48,14 @@ public class App {
 			break;
 		}
 		case "l": {
-			System.out.println("Enter start hour : ");
+			System.out.print("Enter start hour : ");
 			startHour = x.nextInt();
-			System.out.println("Enter start minute : ");
+			System.out.print("Enter start minute : ");
 			startMinute = x.nextInt();
 			break;
 		}
 		default:
+			System.exit(0);
 			break;
 		}
 
@@ -64,9 +64,9 @@ public class App {
 
 		final String f = flag;
 
-		System.out.println("Enter end hour : ");
+		System.out.print("Enter end hour : ");
 		endHour = x.nextInt();
-		System.out.println("Enter end minute : ");
+		System.out.print("Enter end minute : ");
 		endMinute = x.nextInt();
 
 		final LocalTime endTimeManual = LocalTime.of(endHour, endMinute);// 08:30
