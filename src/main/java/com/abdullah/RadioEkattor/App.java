@@ -6,14 +6,10 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
-/**
- * Hello world!
- *
- */
 public class App {
-    public static void main( String[] args ) throws InterruptedException{
-        System.out.println( "Hello World!" );
-        System.out.println("hi radio 98.4");
+	public static void main(String[] args) throws InterruptedException {
+		System.out.println("Hello World!");
+		System.out.println("hi radio 98.4");
 		ProcessDownload processDownload = new ProcessDownload();
 
 		int startHour = 0;
@@ -133,5 +129,5 @@ public class App {
 
 		t1.join();
 		t2.join();
-    }
+	}
 }

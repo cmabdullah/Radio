@@ -23,50 +23,11 @@ public class ProcessDownload {
 			System.out.println("process Terminated : " + endTimeManual);
 			System.out.println("download path : " + path);
 			
-			SetRadioChannelContext setRadioChannel = new SetRadioChannelContext();
+			SetRadioChannel setRadioChannel = new SetRadioChannel();
 			
-			//setRadioChannel.setRadio(new RadioEkattor(endTimeManual, path));
-			setRadioChannel.setRadio(new RadioEkattor());
-			//setRadioChannel.startRadio();
-			
-			/***
-			URLConnection conn;
-			try {
-				conn = new URL("http://103.253.47.173:8000/;stream/1;").openConnection();
-				InputStream is = conn.getInputStream();
-				path = path.concat("radioEkattor.mp3");
-				LocalDate localDate = LocalDate.now();
-				LocalDateTime localDateTime = LocalDateTime.of(localDate, endTimeManual); // 2018-12-01T08:30
-
-			    OutputStream outstream = new FileOutputStream(new File(path));
-			    byte[] buffer = new byte[4096];
-			    int len;
-
-			    while ((len = is.read(buffer)) > 0) {
-			        outstream.write(buffer, 0, len);
-			        System.out.println("-");
-			        System.out.println("|");
-			        //2018-12-01T17:11:48.184
-			        LocalDateTime localDateTimeNow = LocalDateTime.now();
-			        if(localDateTimeNow.isAfter(localDateTime)) {
-			        	break;
-			        }
-			    }
-			    System.out.println("Done");
-			    outstream.close();
-				
-			} catch (MalformedURLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
-			***/
-
+			setRadioChannel.setRadio(new RadioEkattor(endTimeManual, path));
+			setRadioChannel.startRadio();
 		}
-
 	}
 
 	public void consume(LocalDate date, LocalTime time) throws InterruptedException {

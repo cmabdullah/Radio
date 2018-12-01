@@ -1,6 +1,6 @@
 package com.abdullah.RadioEkattor;
 
-public class SetRadioChannelContext {
+public class SetRadioChannel {
 	
 	private Radio radio;
 
@@ -11,6 +11,4 @@ public class SetRadioChannelContext {
 	public void startRadio() {
 		radio.startRadio();
 	}
-	
-
 }
