@@ -38,7 +38,7 @@ public class RadioEkattor implements Radio{
 		try {
 			conn = new URL("http://103.253.47.173:8000/;stream/1;").openConnection();
 			InputStream is = conn.getInputStream();
-			path = path.concat("/radioEkattor.mp3");
+			path = path.concat("/radioEkattor "+LocalDateTime.now()+".mp3");
 
 		    OutputStream outstream = new FileOutputStream(new File(path));
 		    byte[] buffer = new byte[4096];
@@ -69,10 +69,10 @@ public class RadioEkattor implements Radio{
 	}
 
 	private int animation(int i) {
-		if (i<10)
+		if (i<20)
 		System.out.print("-");
 		
-		if(i == 10) {
+		if(i == 20) {
 			System.out.println();
 			i = 0;
 		}

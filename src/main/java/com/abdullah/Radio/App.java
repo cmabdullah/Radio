@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class App {
 	public static void main(String[] args) throws InterruptedException {
-		System.out.println("hi radio 98.4");
+		System.out.println("Welcome radio 98.4");
 		ProcessDownload processDownload = new ProcessDownload();
 
 		int startHour = 0;
@@ -21,25 +21,9 @@ public class App {
 
 		System.out.println("you wanted to start now? Y/L");
 
-		flag = x.nextLine();
+		flag = x.nextLine().toLowerCase();
 
 		switch (flag) {
-		case "Y": {
-			System.out.println("Working");
-			String localDateTimeString = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm").format(LocalDateTime.now());
-			// System.out.println("currentMonthString : "+localDateTimeString);
-			// 2018-12-01 21:31
-			startHour = Integer.parseInt(localDateTimeString.substring(11, 13));
-			startMinute = Integer.parseInt(localDateTimeString.substring(14, 16));
-			break;
-		}
-		case "L": {
-			System.out.println("Enter start hour : ");
-			startHour = x.nextInt();
-			System.out.println("Enter start minute : ");
-			startMinute = x.nextInt();
-			break;
-		}
 		case "y": {
 			System.out.println("Working");
 			String localDateTimeString = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm").format(LocalDateTime.now());
@@ -87,7 +71,7 @@ public class App {
 			public void run() {
 				try {
 
-					if (f.equalsIgnoreCase("Y")) {
+					if (f.equals("y")) {
 						processDownload.process(endTimeManual, path);
 					} else if (f.equalsIgnoreCase("L")) {
 						processDownload.process(endTimeManual, path);
@@ -108,7 +92,7 @@ public class App {
 			@Override
 			public void run() {
 				try {
-					if (f.equalsIgnoreCase("Y")) {
+					if (f.equals("y")) {
 						processDownload.consume(date, startTimeAuto);
 					} else if (f.equalsIgnoreCase("L")) {
 						processDownload.consume(date, startTimeManual);
